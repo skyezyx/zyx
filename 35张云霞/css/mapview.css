@@ -1,0 +1,137 @@
+html,
+body,
+#viewDiv {
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+
+#change {
+	position: absolute;
+	width: 17%;
+	height: 60%;
+	top: 2%;
+	right: 2%;
+	background: white;
+	overflow: auto;
+	z-index: 1;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+}
+
+#topo,
+#gray,
+#hybrid,
+#national-geographic,
+#oceans,
+#osm,
+#satellite {
+	position: relative;
+	width: auto;
+	max-height: 100%;
+	height: 20%;
+	/*display: inline-flex;*/
+	/*margin: 20px 20px;*/
+	padding: 20px;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+#topo1,
+#gray1,
+#hybrid1,
+#national-geographic1,
+#oceans1,
+#osm1,
+#satellite1 {
+	position: relative;
+	float: right;
+	width: auto;
+	padding: 20px;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+#layerToggle {
+	/*left: 5px;*/
+	position: relative;
+	z-index: 1;
+	background-color: white;
+	border-radius: 8px;
+	padding: 10px;
+	opacity: 0.75;
+	height: auto;
+	width: auto;
+}
+
+#legend {
+	z-index: 1;
+	position: absolute;
+	width: auto;
+	height: auto;
+	bottom: 0;
+	right: 0;
+	background: white;
+	opacity: 0.7;
+}
+
+#number,
+#position {
+	position: relative;
+	bottom: 2%;
+}
+
+input {
+	bottom: 10px;
+}
+
+button {
+	position: relative;
+	float: right;
+	height: 20px;
+}
+
+#title {
+	padding: 15px;
+	max-width: 500px;
+	z-index: 1;
+}
+
+#distance-value{
+	color: darkgreen;
+	font-size: 20pt;
+	font-weight: bolder;
+}
+
+#value-police {
+	color: blue;
+	font-size: 20pt;
+	font-weight: bolder;
+}
+
+#value-hospital {
+	color: red;
+	font-size: 20pt;
+	font-weight: bolder;
+}
+
+#value-park {
+	color: green;
+	font-size: 20pt;
+	font-weight: bolder;
+}
+
+#value-school {
+	color: orange;
+	font-size: 20pt;
+	font-weight: bolder;
+}
+
+.esri-legend__layer-caption {
+	visibility: hidden;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<script>
+			var dojoConfig = {
+				has: {
+					"esri-featurelayer-webgl": 1
+				}
+			}
+		</script>
+
+		<link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css" />
+		<link rel="stylesheet" href="css/mapview.css" />
+
+		<script src="https://js.arcgis.com/4.11/"></script>
+		<script src="js/mapview.js" type="text/javascript"></script>
+
+		<title>GeoJSONLayer - 4.11</title>
+
+	</head>
+
+	<body>
+		<div id="viewDiv"></div>
+		<div id="change">
+			<div id="topo">
+				<img src="img/topo.jpg" style="width: 96px;height: 64px;" />
+				<div id="topo1">topo</div>
+			</div>
+			<div id="gray">
+				<img src="img/gray.jpg" style="width: 96px;height: 64px;" />
+				<div id="gray1">gray</div>
+			</div>
+			<div id="hybrid">
+				<img src="img/hybrid.jpg" style="width: 96px;height: 64px;" />
+				<div id="hybrid1">hybrid</div>
+			</div>
+			<div id="national-geographic">
+				<img src="img/national-geographic.jpg" style="width: 96px;height: 64px;" />
+				<div id="grayhybridnational-geographic1">national-geographic</div>
+			</div>
+			<div id="oceans">
+				<img src="img/oceans.jpg" style="width: 96px;height: 64px;" />
+				<div id="oceans1">oceans</div>
+			</div>
+			<div id="osm">
+				<img src="img/osm.jpg" style="width: 96px;height: 64px;" />
+				<div id="osm1">osm</div>
+			</div>
+			<div id="satellite">
+				<img src="img/satellite.jpg" style="width: 96px;height: 64px;" />
+				<div id="satellite1">satelite</div>
+			</div>
+			<span id="layerToggle">
+                <input type="checkbox" id="park"> 公园
+                </br>
+                <input type="checkbox" id="police"> 警察局
+                </br>
+                <input type="checkbox" id="school"> 学校
+                </br>
+                <input type="checkbox" id="hospital"> 医院
+                </br>
+           </span>
+		</div>
+		
+		<div id="legend">
+			<div id="position"></div>
+		</div>
+		
+		<div id="title" class="esri-widget">
+			当前<span id="distance-value">3</span>km的生活范围中，
+			<br>鼠标指针所在附近学校有<span id="value-school">?</span>个
+			<br>医院有<span id="value-hospital">?</span>个
+			<br>公园有<span id="value-park">?</span>个
+			<br>警察局有<span id="value-police">?</span>个
+			<input id="distance" type="range" min="0" max="3" step="0.1" value="10000">&nbsp;
+			<span id="distance-value2">3</span>km
+		</div>
+	
+	</body>
+
+</html>
