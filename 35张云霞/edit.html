@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Editor</title>
+
+		<link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css" />
+		<script src="https://js.arcgis.com/4.11/"></script>
+
+		<style>
+			html,
+			body,
+			#viewDiv {
+				padding: 0;
+				margin: 0;
+				height: 100%;
+				width: 100%;
+			}
+
+			.esri-editor .esri-item-list__scroller {
+				max-height: 350px;
+			}
+		</style>
+
+		<script>
+			require([
+				"esri/Map",
+				"esri/layers/GeoJSONLayer",
+				"esri/views/MapView",
+				"esri/widgets/Editor",
+			], function(Map, GeoJSONLayer, MapView, Editor) {
+
+				var template = {
+					title: "{name}",
+					content: [{
+						type: "fields",
+						fieldInfos: [{
+								fieldName: "name",
+								visible: true,
+								label: "name"
+							},
+							{
+								fieldName: "address",
+								visible: true,
+								label: "address"
+							}
+						]
+					}]
+				}
+
+				const feallayer = new GeoJSONLayer({
+					url: "https://skyezyx.github.io/population/sphp.json",
+					title: "poi",
+					outFields: ["*"],
+					popupTemplate: template
+				});
+
+				var map = new Map({
+					basemap: "national-geographic",
+					ground: "world-elevation",
+					layers: [feallayer]
+				});
+
+				const view = new MapView({
+					container: "viewDiv",
+					map: map,
+					center: [114.311, 30.588],
+					zoom: 12
+				});
+
+				view.when(function() {
+					// view.popup.autoOpenEnabled = false; //disable popups
+					// Create the Editor
+					let editor = new Editor({
+						view: view
+					});
+
+					// Add widget to top-right of the view
+					view.ui.add(editor, "top-right");
+				});
+				
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="viewDiv"></div>
+		<div id="editorDiv"></div>
+	</body>
+</html>
